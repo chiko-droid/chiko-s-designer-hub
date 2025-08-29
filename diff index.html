@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiko's Designer Hub</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: 'Poppins', sans-serif; background: #fefefe; color: #333; text-align: center; overflow-x: hidden;}
+    .header { position: relative; height: 200px; overflow: hidden; background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #f6d365, #fda085); background-size: 400% 400%; animation: gradient 12s ease infinite; clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);}
+    @keyframes gradient {0% {background-position: 0% 50%;} 50% {background-position: 100% 50%;} 100% {background-position: 0% 50%;}
+    }
+    .header h1 { position: absolute; bottom: 20px; width: 100%; font-size: 2.5rem; color: white; letter-spacing: 2px;}
+    .confetti { position: absolute; width: 10px; height: 10px; background-color: red; top: -10px; animation: fall linear infinite; opacity: 0.8; border-radius: 3px;}
+    @keyframes fall { 0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }}
+    .content { padding: 40px 20px;}
+    .content h2 { color: #444; font-size: 2rem;}
+    .contact { margin-top: 30px; font-size: 1.2rem;}
+    .contact a { display: block; margin: 10px 0; text-decoration: none; color: #0077cc; font-weight: bold; word-break: break-all;}
+    .cta-buttons { margin-top: 20px;}
+    .btn { display: inline-block; margin: 10px 10px 0 10px; padding: 12px 25px; background: #ff7f50; color: white; font-size: 1.2rem; border-radius: 8px; text-decoration: none; transition: background 0.3s;}
+    .btn:hover { background: #ff5722;}
+    .flyers { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 40px 10px 0 10px;}
+    .flyers img { max-width: 320px; width: 100%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.15); transition: transform 0.3s; object-fit: cover; background: #eee;}
+    .flyers img:hover { transform: scale(1.05);}
+    @media (max-width: 900px) {.flyers img { max-width: 45vw;}}
+    @media (max-width: 600px) {.content { padding: 25px 5px;} .header h1 { font-size: 1.6rem;} .flyers { flex-direction: column; align-items: center; gap: 15px;} .flyers img { max-width: 90vw;}}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎨 Chiko's Designer Hub 🎨</h1>
+  </div>
+  <div class="content">
+    <h2>Creative Designs, Made Just for You</h2>
+    <p>I create eye-catching, unique designs that stand out.<br>
+    Let’s work together to bring your vision to life!</p>
+    <div class="contact">
+      <p>📧 Email: <a href="mailto:murevachikomborero@gmail.com">murevachikomborero@gmail.com</a></p>
+      <p>📱 Phone: <a href="tel:+27746424572">+27 74 642 4572</a></p>
+    </div>
+    <div class="cta-buttons">
+      <a class="btn" href="mailto:murevachikomborero@gmail.com?subject=Design Inquiry&body=Hi Chiko,%0D%0A%0D%0AI would like to contact you about a design.">Contact Me</a>
+      <a class="btn" href="tel:+27746424572">Call Me</a>
+    </div>
+  </div>
+  <div class="flyers">
+    <img src="flyer.jpg" alt="Flyer Design">
+    <img src="summer events.jpg" alt="Summer Events">
+    <img src="freepik-gradient-blue-business.jpg" alt="Gradient Blue Business Flyer">
+  </div>
+  <script>
+    // Confetti animation
+    document.addEventListener('DOMContentLoaded', () => {
+      const colors = ['#ff595e', '#ffca3a', '#8ac926', '#1982c4', '#6a4c93', '#ff6d00'];
+      const confettiCount = 60;
+      for (let i = 0; i < confettiCount; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        const size = Math.random() * 12 + 8;
+        confetti.style.width = `${size}px`;
+        confetti.style.height = `${size}px`;
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        confetti.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(confetti);
+      }
+    });
+  </script>
+</body>
+</html>
